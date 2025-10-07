@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom */
+:root {
+  --sidebar-bg: #0f1724; /* deep charcoal */
+  --brand: #2563EB; /* bright blue */
+}
+
+body { background: #f3f4f6; }
+
+/* scrollbar for content area */
+.content-scroll::-webkit-scrollbar { width: 10px; }
+.content-scroll::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 8px; }
