@@ -18,7 +18,14 @@ export default function App() {
   const [page, setPage] = useState('profile') // profile, notifications, gyms, feedback, ai
 
   const renderPage = () => {
-
+    switch(page) {
+      case 'profile': return <Profile user={user} />
+      case 'notifications': return <Notifications />
+      case 'gyms': return <GymList />
+      case 'feedback': return <Feedback />
+      case 'ai': return <AIFeature />
+      default: return <NotFound onGoHome={() => setPage('profile')} />
+    }
   }
 
   return (
