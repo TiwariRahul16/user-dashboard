@@ -1,6 +1,12 @@
 import React from 'react'
 
-
+const items = [
+  { id: 'profile', label: 'Profile', icon: userIcon },
+  { id: 'notifications', label: 'Notifications', icon: bellIcon },
+  { id: 'gyms', label: 'Gym List', icon: gymIcon },
+  { id: 'feedback', label: 'Feedback', icon: chatIcon },
+  { id: 'ai', label: 'AI Assistant', icon: brainIcon },
+]
 
 export default function Sidebar({ active, onChange, user }) {
   return (
