@@ -37,6 +37,55 @@ export default function GymList() {
         </div>
       </div>
 
+      {/* Gym Cards */}
+      {filtered.length === 0 ? (
+        <div className="text-center py-10 text-gray-400 italic">
+          No gyms found. Try another keyword.
+        </div>
+      ) : (
+        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {filtered.map((g) => (
+            <li
+              key={g.id}
+              className="p-5 border border-gray-100 rounded-2xl bg-gray-50 hover:bg-white shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+            >
+              {/* Header */}
+              <div>
+                <div className="flex justify-between items-start mb-3">
+                  <h4 className="text-lg font-semibold text-gray-800">
+                    {g.name}
+                  </h4>
+                  <div className="flex items-center bg-yellow-100 text-yellow-700 px-2 py-1 rounded-md text-xs font-semibold">
+                    <Star size={12} className="mr-1 text-yellow-500" /> {g.rating}
+                  </div>
+                </div>
+
+                <div className="flex items-center text-sm text-gray-500 mb-3">
+                  <MapPin size={14} className="mr-1 text-[var(--brand,#2563EB)]" />
+                  {g.city}
+                </div>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {g.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="text-xs bg-blue-50 text-[var(--brand,#2563EB)] px-2 py-[3px] rounded-full border border-blue-100 font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Footer Button */}
+              <button className="mt-3 w-full py-2 text-sm font-medium text-white bg-[var(--brand,#2563EB)] rounded-lg shadow-sm hover:shadow-md hover:bg-blue-700 transition-all duration-300">
+                View Details
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
 
       {/* Footer */}
       <div className="mt-10 flex justify-center items-center gap-2 text-xs text-gray-500 border-t border-gray-100 pt-4">
